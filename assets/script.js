@@ -13,8 +13,21 @@ function Reload() {
   location.reload(true);
   localStorage.clear();
 }
-
 let turn = "X";
-let message = document.querySelector("#message");
-let cells = document.querySelectorAll("[data-cell]");
-message.innerText = "Winner is : " + turn;
+
+localStorage.setItem("turnX", "X");
+localStorage.setItem("turnO", "O");
+
+function game(id) {
+  let element = document.getElementById(id);
+  if (turn === localStorage.getItem("turnX") && element.innerHTML === "") {
+    element.innerHTML = "X";
+    turn = "O";
+  } else if (
+    turn === localStorage.getItem("turnO") &&
+    element.innerHTML === ""
+  ) {
+    element.innerHTML = "O";
+    turn = "X";
+  }
+}
