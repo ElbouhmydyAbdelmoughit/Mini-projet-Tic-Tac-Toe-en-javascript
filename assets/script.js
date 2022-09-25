@@ -15,18 +15,12 @@ function Reload() {
 }
 let turn = "X";
 
-localStorage.setItem("turnX", "X");
-localStorage.setItem("turnO", "O");
-
 function game(id) {
   let element = document.getElementById(id);
-  if (turn === localStorage.getItem("turnX") && element.innerHTML === "") {
+  if (turn === "X" && element.innerHTML === "") {
     element.innerHTML = "X";
     turn = "O";
-  } else if (
-    turn === localStorage.getItem("turnO") &&
-    element.innerHTML === ""
-  ) {
+  } else if (turn === "O" && element.innerHTML === "") {
     element.innerHTML = "O";
     turn = "X";
   }
