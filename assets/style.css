@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    background-image: linear-gradient(45deg, #23074d, #cc5333);
+}
+
+
+/* the styling of the board. Grid to style the 3x3 boxes easily */
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding: 20px;
+    margin-left: 100px;
+    width: 300px;
+}
+
+form input {
+    display: inline !important;
+    margin-bottom: 10px;
+    display: block;
+    padding: 5px;
+}
+
+form span {
+    margin-left: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    color: white;
+}
+
+form #btn_addPlayers {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 20px;
+    border: none;
+}
+
+form #btn_addPlayers:hover {
+    background-color: rgb(34, 34, 34);
+}
+
+.board {
+    display: grid;
+    width: 30vw;
+    height: 100vh;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    justify-content: center;
+    align-content: center;
+}
+
+
+/* the individual boxes where X and O are placed. */
+
+.cell {
+    border: 1px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+#message {
+    color: white;
+}
+
+#restart {
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+#restart:hover {
+    background-color: rgb(34, 34, 34);
+}
+
+
+/* display the message and restart button. takes 3 grid that's why there are grid colum start and end */
+
+#message,
+#restart {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin: auto;
+    margin-top: 10px;
+}
+
+
+/* specifying the size of the message */
+
+#message {
+    font-size: xx-large;
+    font-weight: bold;
+}
